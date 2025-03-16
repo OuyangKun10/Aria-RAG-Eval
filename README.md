@@ -20,7 +20,6 @@ cd VILA
 
 python -m pip install -e .
 
-if meet any bugs when evaluating vila directly using lmms-eval, you may find useful solutions on https://github.com/EvolvingLMMs-Lab/lmms-eval.
 
 2) not using lmms-eval
 
