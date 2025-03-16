@@ -23,3 +23,38 @@ python -m pip install -e .
 
 2) not using lmms-eval
 
+{git clone https://github.com/NVlabs/VILA.git}
+
+{./environment_setup.sh vila}
+
+{conda activate vila}
+
+{python -W ignore server.py \
+    --port 8000 \
+    --model-path Efficient-Large-Model/VILA1.5-40b \
+    --conv-mode auto}
+
+{
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="http://localhost:8000",
+    api_key="fake-key",
+)
+response = client.chat.completions.create(
+    messages=[
+        {
+            "role": "user",
+            "content": [
+                {"type": "text", "text": {the input question}},
+                {
+                    "type": "video",
+                    "video": { [the frame list, opt: uniform sampling; RAG-frames]
+                    },
+                },
+            ],
+        }
+    ],
+    model="VILA1.5-40b",
+)
+}
