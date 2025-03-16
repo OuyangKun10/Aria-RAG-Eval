@@ -1,0 +1,17 @@
+export HF_ENDPOINT="https://hf-mirror.com"
+# export no_proxy=hf-mirror.com
+export DECORD_EOF_RETRY_MAX=20480s
+# export HF_DATASETS_OFFLINE=1
+export HF_HOME=/home/gaohuan03/ouyangkun/.cache/huggingface
+export CUDA_VISIBLE_DEVICES=0,1,2
+python3     -m accelerate.commands.launch \
+    --num_processes 8 \
+    --gpu_ids 0,1,2,3,4,5,6,7 \ 
+    -m lmms_eval \
+    --model llava_vid \
+    --model_args pretrained=lmms-lab/LLaVA-Video-72B-Qwen2,conv_template=qwen_1_5,video_decode_backend=decord,max_frames_num=64,mm_spatial_pool_mode=average,mm_newline_position=grid,mm_resampler_location=after,device_map="auto" \
+    --tasks mlvu \
+    --batch_size 1 \
+    --log_samples \
+    --log_samples_suffix llava_vid \
+    --output_path ./logs/
