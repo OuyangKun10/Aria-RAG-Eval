@@ -58,6 +58,7 @@ AVAILABLE_MODELS = {
     "ross": "Ross",
     "rag_qwen2_vl": "RAG_Qwen2_VL",
     "rag_llava_vid": "RAG_LlavaVid",
+    "rag_vila": "RAG_VILA",
 }
 
 
