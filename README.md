@@ -12,3 +12,9 @@ bash eval_qwen2vl_rag_mlvu.sh
 To test vila
 
 pip install s2wrapper@git+https://github.com/bfshi/scaling_on_scales
+
+git clone git@github.com:NVlabs/VILA.git
+
+cd VILA
+
+python -m pip install -e .
