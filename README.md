@@ -1,3 +1,5 @@
+Before evaluation, you need modify the HF_HOME in the .sh file, ensure that you download the dataset in the correct path.
+
 ```markdown
 # Aria-RAG-Eval
 
