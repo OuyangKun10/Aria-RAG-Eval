@@ -19,6 +19,15 @@ To evaluate Qwen2VL-w-Aria-RAG:
 bash eval_qwen2vl_rag_mlvu.sh
 ```
 
+**Testing 72B model**
+
+You need load it with multi-gpus, and do the following step:
+```
+# -m accelerate.commands.launch \
+#    --num_processes 8 \
+#    --gpu_ids 0,1,2,3,4,5,6,7 \
+```
+
 ## To test vila
 
 1.
